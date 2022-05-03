@@ -8,7 +8,12 @@
     <%= link_to 'New cost', new_category_cost_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
     <%= link_to 'Back', '/', class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
-
+  <div>
+  Total: $<%= @category.transaction_sum %>
+  </div>
+  <% if @costs.count == 0 %>
+  <p>There are no transactions under this category, add some!</p>
+  <% end %>
   <div id="costs" class="min-w-full">
     <%= render @costs %>
   </div>

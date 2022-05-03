@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   def index
     if current_user.nil?
       @categories = []
+      render('splash')
     
     else
       @categories = Category.where(user_id: current_user.id)
@@ -62,6 +63,14 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def home
+    if user_signed_in?
+      render(:template => 'categories#index')
+    else
+      render(:template => 'categories#index')
     end
   end
 
