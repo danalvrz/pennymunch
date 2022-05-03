@@ -4,7 +4,7 @@ class CostsController < ApplicationController
   # GET /costs or /costs.json
   def index
     @category = Category.find(params[:category_id])
-    @costs = Cost.where(category_id: @category.id).order(created_at: :desc)
+    @costs = Cost.includes(:category).where(category_id: @category.id).order(created_at: :desc)
   end
 
   # GET /costs/1 or /costs/1.json

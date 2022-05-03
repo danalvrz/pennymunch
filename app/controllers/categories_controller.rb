@@ -8,14 +8,14 @@ class CategoriesController < ApplicationController
       render('splash')
     
     else
-      @categories = Category.where(user_id: current_user.id)
+      @categories = Category.includes(:user).where(user_id: current_user.id)
       @user = current_user
     end
   end
 
   # GET /categories/1 or /categories/1.json
   def show
-    @costs = Cost.where(category_id: @category.id)
+    @costs = Cost.includes(:category).where(category_id: @category.id)
   end
 
   # GET /categories/new
@@ -63,14 +63,6 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
       format.json { head :no_content }
-    end
-  end
-
-  def home
-    if user_signed_in?
-      render(:template => 'categories#index')
-    else
-      render(:template => 'categories#index')
     end
   end
 
