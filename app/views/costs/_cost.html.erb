@@ -9,9 +9,14 @@
     <%= cost.amount %>
   </p>
 
+   <div class="inline-block ml-2">
+      <%= button_to "Destroy this transaction", category_cost_path(category_id: @category.id, id: cost.id), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+
   <% if action_name != "show" %>
-    <%= link_to "Show this cost", category_costs_path(cost), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%#<%= link_to 'Edit this cost', edit_category_cost_path(cost), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%#<%= link_to "Show this cost", category_costs_path(cost), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%#<%= link_to 'Edit this cost', edit_category_cost_path(category_id: @category.id, id: cost.id), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this transaction', update_cost_path(category_id: @category.id, id: cost.id), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
 </div>
