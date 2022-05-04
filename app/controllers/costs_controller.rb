@@ -16,6 +16,7 @@ class CostsController < ApplicationController
   # GET /costs/new
   def new
     @cost = Cost.new
+    @category = Category.find(params[:category_id])
   end
 
   # GET /costs/1/edit
