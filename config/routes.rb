@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   resources :users
   get '/categories/:category_id/costs/:id/update', to:'costs#update_cost', as: "update_cost"
-  
+  #get '/app/assets/images/bg.jpg'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

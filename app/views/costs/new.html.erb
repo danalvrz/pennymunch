@@ -1,10 +1,9 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New cost</h1>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Category</strong>
-    <%= Category.find(params[:category_id]).name %>
-  </p>
+<div class="mx-auto w-full">
+<div class="border-b container py-4 w-full mb-5 mt-3 flex justify-between">
+<%= link_to category_costs_path(params[:category_id]) do %>
+  <%= image_tag "arrow.png", class:"invert rotate-180", size:"40", alt: "logo" %>
+<% end %>
+<h2 class="text-white text-4xl text-center">New expense</h2>
+</div>
   <%= render "form", cost: @cost %>
-
-  <%= link_to 'Back to costs', category_costs_path(params[:category_id]), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>

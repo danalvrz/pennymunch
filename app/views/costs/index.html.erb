@@ -1,20 +1,23 @@
 <div class="w-full">
+<div class="border-b container py-4 w-full mb-5 mt-3 flex justify-between">
+<%= link_to "/" do %>
+  <%= image_tag "arrow.png", class:"invert rotate-180", size:"40", alt: "logo" %>
+<% end %>
+<h2 class="text-white text-4xl text-center"><%= @category.name %> expenses</h2>
+</div>
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Costs</h1>
-    <%= link_to 'New cost', new_category_cost_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-    <%= link_to 'Back', '/', class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-  <div>
+  <div class="text-4xl text-white text-center mb-5 font-bold">
   Total: $<%= @category.transaction_sum %>
   </div>
   <% if @costs.count == 0 %>
-  <p>There are no transactions under this category, add some!</p>
+  <p class="text-2xl text-white text-center">There are no transactions under this category, add some!</p>
   <% end %>
   <div id="costs" class="min-w-full">
     <%= render @costs %>
+  </div>
+  <div class="w-full container flex justify-center mt-10">
+  <%= link_to 'Add new expense', new_category_cost_path, class: "my-2 text-gray-600 bg-white border hover:bg-transparent hover:border hover:text-white text-2xl p-4 rounded-lg mx-auto" %>
   </div>
 </div>
