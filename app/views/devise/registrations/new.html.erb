@@ -10,21 +10,21 @@
 </div>
 <div class="mt-4 py-10 px-2">
   <div class="field">
-    <%= f.text_field :name, placeholder: "full name", class: "rounded-lg w-full py-3 my-2 text-2xl" %>
+    <%= f.text_field :name, placeholder: "full name", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
   </div>
 
   <div class="field">
-    <%= f.email_field :email, placeholder: "email", autofocus: true, autocomplete: "email", class: "rounded-lg w-full py-3 my-2 text-2xl" %>
+    <%= f.email_field :email, placeholder: "email", autofocus: true, autocomplete: "email", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
   </div>
 
   <div class="field">
     <% if @minimum_password_length %>
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "password (#{@minimum_password_length} characters minimum)", class: "rounded-lg w-full py-3 my-2 text-2xl" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "password (#{@minimum_password_length} characters minimum)", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
     <% end %><br />
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password confirmation", class: "rounded-lg w-full py-3 my-2 text-2xl" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password confirmation", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
   </div>
   <div class="rounded-lg actions border p-2 text-center text-white text-2xl hover:bg-white hover:text-gray-600 w-1/2 mx-auto mt-10">
     <%= f.submit "Sign up" %>
