@@ -1,6 +1,5 @@
 <div class="w-full container mx-auto">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 <div class="border-b container py-4 w-full mb-5 mt-3 flex justify-between">
 <%= link_to "/" do %>
   <%= image_tag "arrow.png", class:"invert rotate-180", size:"40", alt: "logo" %>
@@ -9,6 +8,7 @@
 
 </div>
 <div class="mt-4 py-10 px-2">
+  <div class="text-white"><%= render "devise/shared/error_messages", resource: resource %></div>
   <div class="field">
     <%= f.text_field :name, placeholder: "full name", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
   </div>

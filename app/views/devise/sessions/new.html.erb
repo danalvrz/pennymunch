@@ -10,6 +10,7 @@
   </div>
 </div>
 <div class="mt-4 py-10 px-2">
+  <div class="text-white"><%= render "devise/shared/error_messages", resource: resource %></div>
   <div class="field w-full">
     <%= f.email_field :email, placeholder: 'email', autocomplete: "email", class: "bg-black/[.20] text-white rounded-lg w-full py-4 my-2 text-2xl" %>
   </div>
