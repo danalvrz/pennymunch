@@ -78,4 +78,3 @@ end
 
 gem 'devise'
 gem 'rubocop'
-
