@@ -1,19 +1,22 @@
 class CostsController < ApplicationController
-  before_action :set_cost, only: %i[ show edit update destroy ]
+  before_action :set_cost, only: %i[ show edit destroy ]
 
   # GET /costs or /costs.json
   def index
     @category = Category.find(params[:category_id])
-    @costs = Cost.where(category_id: @category.id)
+    @costs = Cost.includes(:category).where(category_id: @category.id).order(created_at: :desc)
   end
 
   # GET /costs/1 or /costs/1.json
   def show
+    @category = Category.find(params[:category_id])
+    @cost = Cost.find(params[:id])
   end
 
   # GET /costs/new
   def new
     @cost = Cost.new
+    @category = Category.find(params[:category_id])
   end
 
   # GET /costs/1/edit
@@ -29,7 +32,7 @@ class CostsController < ApplicationController
 
     respond_to do |format|
       if @cost.save
-        format.html { redirect_to category_path(params[:category_id]), notice: "Cost was successfully created." }
+        format.html { redirect_to category_costs_path(params[:category_id]), notice: "Cost was successfully created." }
         format.json { render :show, status: :created, location: @cost }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,9 +43,11 @@ class CostsController < ApplicationController
 
   # PATCH/PUT /costs/1 or /costs/1.json
   def update
+    @cost = Cost.find(params[:id])
+    
     respond_to do |format|
       if @cost.update(cost_params)
-        format.html { redirect_to cost_url(@cost), notice: "Cost was successfully updated." }
+        format.html { redirect_to category_costs_path(params[:category_id]), notice: "Cost was successfully updated." }
         format.json { render :show, status: :ok, location: @cost }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,12 +56,17 @@ class CostsController < ApplicationController
     end
   end
 
+  def update_cost
+    @cost = Cost.find(params[:id])
+  end
+
   # DELETE /costs/1 or /costs/1.json
   def destroy
+    @cost = Cost.find(params[:id])
     @cost.destroy
 
     respond_to do |format|
-      format.html { redirect_to costs_url, notice: "Cost was successfully destroyed." }
+      format.html { redirect_to category_costs_path(params[:category_id]), notice: "Cost was successfully destroyed." }
       format.json { head :no_content }
     end
   end

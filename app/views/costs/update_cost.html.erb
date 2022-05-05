@@ -1,0 +1,34 @@
+<div class="mx-auto w-full">
+<div class="border-b container py-4 w-full mb-5 mt-3 flex justify-between">
+<%= link_to category_costs_path(params[:category_id]) do %>
+  <%= image_tag "arrow.png", class:"invert rotate-180", size:"40", alt: "logo" %>
+<% end %>
+<h2 class="text-white text-4xl text-center">Editing expense</h2>
+</div>
+<%= form_with(model: @cost, url: category_cost_path, method: "patch", class: "contents") do |form| %>
+  <% if @cost.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(cost.errors.count, "error") %> prohibited this cost from being saved:</h2>
+        <strong>This is an update form</strong>
+      <ul>
+        <% cost.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.text_field :name, placeholder: "name", class: "bg-black/[.20] text-white rounded-lg w-full py-4 my-1 text-2xl" %>
+  </div>
+
+   <div class="my-5">
+    <%= form.text_field :amount, placeholder: "amount", class: "bg-black/[.20] text-white rounded-lg w-full py-4 my-1 text-2xl" %>
+  </div>
+
+    <div class="w-full container flex justify-center mt-10">
+    <%= form.submit "Update expense", class: "my-2 text-gray-600 bg-white border hover:bg-transparent hover:border hover:text-white text-2xl p-4 rounded-lg mx-auto" %>
+  </div>
+<% end %>
+</div>
+</div>

@@ -5,16 +5,17 @@ class CategoriesController < ApplicationController
   def index
     if current_user.nil?
       @categories = []
+      render('splash')
     
     else
-      @categories = Category.where(user_id: current_user.id)
+      @categories = Category.includes(:user).where(user_id: current_user.id)
       @user = current_user
     end
   end
 
   # GET /categories/1 or /categories/1.json
   def show
-    @costs = Cost.where(category_id: @category.id)
+    @costs = Cost.includes(:category).where(category_id: @category.id)
   end
 
   # GET /categories/new
@@ -33,7 +34,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to category_url(@category), notice: "Category was successfully created." }
+        format.html { redirect_to '/', notice: "Category was successfully created." }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +47,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to category_url(@category), notice: "Category was successfully updated." }
+        format.html { redirect_to '/', notice: "Category was successfully updated." }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -1,17 +1,15 @@
-<div id="<%= dom_id cost %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+<div id="<%= dom_id cost %>" class="border rounded-lg flex mb-5">
+  <div class="flex-col container ml-3">
+  <p class="my-5 text-white font-bold text-5xl border-b w-fit pb-3">
     <%= cost.name %>
   </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Amount:</strong>
-    <%= cost.amount %>
+  <p class="my-5 text-white font-bold text-3xl">
+    $<%= cost.amount %>
   </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this cost", category_costs_path(cost), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%#<%= link_to 'Edit this cost', edit_category_cost_path(cost), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+  </div>
+   
+  <div class="flex-col p-3 mt-2">
+      <%= button_to "Delete", category_cost_path(category_id: @category.id, id: cost.id), method: :delete, class: "border p-3 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg mb-5" %>
+      <%= link_to 'Edit', update_cost_path(category_id: @category.id, id: cost.id), class: "border p-3 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg" %>
+    </div>
 </div>

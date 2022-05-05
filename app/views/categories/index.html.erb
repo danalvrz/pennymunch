@@ -1,19 +1,21 @@
 <div class="w-full">
+<div class="border-b container py-4 w-full mb-5 mt-3 flex justify-between">
+<h2 class="text-white text-4xl text-center">Categories</h2>
+<div class="actions border p-2 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg">
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+  </div>
+</div>
+<div class="w-full">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Categories</h1>
-    <%= link_to 'New category', new_category_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
-  <% if user_signed_in?%>
-  <div class="text-3xl">
-  hello hello!
-  </div>
-  <% end %>
-
-  <div id="categories" class="min-w-full">
+  <div id="categories" class="w-full">
     <%= render @categories %>
   </div>
+  <div class="w-full container flex justify-center">
+  <%= link_to 'Add new category', new_category_path, class: "my-2 text-gray-600 bg-white border hover:bg-transparent hover:border hover:text-white text-2xl p-4 rounded-lg mx-auto" %>
+  </div>
 </div>
+</div>
+

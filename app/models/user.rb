@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
     has_many :costs
     has_many :categories
+    validates :name, presence: true, length: { minimum: 3 }
 end
