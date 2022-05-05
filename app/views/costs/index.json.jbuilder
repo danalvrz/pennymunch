@@ -1,1 +1,1 @@
-json.array! @costs, partial: "costs/cost", as: :cost
+json.array! @costs, partial: 'costs/cost', as: :cost

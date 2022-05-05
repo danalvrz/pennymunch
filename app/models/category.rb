@@ -5,6 +5,6 @@ class Category < ApplicationRecord
   validates :icon, presence: true, length: { minimum: 1, maximum: 1 }
 
   def transaction_sum
-    Cost.includes(:category).where(category_id: self.id).sum(:amount)
+    Cost.includes(:category).where(category_id: id).sum(:amount)
   end
 end
