@@ -1,0 +1,15 @@
+<div id="<%= dom_id cost %>" class="cost-card border rounded-lg flex mb-5">
+  <div class="flex-col container ml-3">
+  <p class="my-5 text-white font-bold text-5xl border-b w-fit pb-3">
+    <%= cost.name %>
+  </p>
+  <p class="my-5 text-white font-bold text-3xl">
+    $<%= cost.amount %>
+  </p>
+  </div>
+   
+  <div class="flex-col p-3 mt-2">
+      <%= button_to "Delete", category_cost_path(category_id: @category.id, id: cost.id), method: :delete, class: "border p-3 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg mb-5" %>
+      <%= link_to 'Edit', update_cost_path(category_id: @category.id, id: cost.id), class: "border p-3 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg" %>
+    </div>
+</div>

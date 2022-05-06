@@ -1,0 +1,12 @@
+<div class="mx-auto w-full">
+<div class="border-b container py-4 w-full mb-5 mt-3 flex justify-between">
+<%= link_to "/" do %>
+  <%= image_tag "arrow.png", class:"invert rotate-180", size:"40", alt: "logo" %>
+<% end %>
+<h2 class="text-white text-4xl text-center">New category</h2>
+</div>
+
+  <%= render "form", category: @category %>
+
+  <%#<%= link_to 'Back to categories', categories_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+</div>

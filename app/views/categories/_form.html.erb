@@ -1,0 +1,25 @@
+<%= form_with(model: category, class: "contents") do |form| %>
+  <% if category.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.text_field :name, placeholder: "name", class: "rounded-lg w-full py-4 my-2 text-2xl bg-black/[.20] text-white" %>
+  </div>
+
+  <div class="my-5 text-white">
+    <%= form.text_field :icon, placeholder: "icon (pick one emoji)", class: "rounded-lg w-full py-4 my-1 text-2xl bg-black/[.20] text-white" %>
+  </div>
+
+  <div class="w-full flex justify-center">
+    <%= form.submit class: "my-2 text-gray-600 bg-white border hover:bg-transparent hover:border hover:text-white text-2xl p-4 rounded-lg mx-auto" %>
+  </div>
+<% end %>

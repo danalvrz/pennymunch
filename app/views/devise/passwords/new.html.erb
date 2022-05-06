@@ -1,0 +1,20 @@
+
+<div class="w-full container mx-auto">
+<div class="border-b container py-5 w-full mb-5 mt-3 flex justify-between">
+<%= link_to :back do %>
+  <%= image_tag "arrow.png", class:"invert rotate-180", size:"40", alt: "logo" %>
+<% end %>
+<h2 class="text-white text-2xl text-center pr-8">Forgot your password?</h2>
+</div>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="mt-4 py-10 px-2">
+  <div class="field w-full">
+    <%= f.email_field :email, placeholder: 'email', autofocus: true, autocomplete: "email", class: "w-full py-3 my-2 text-2xl" %>
+  </div>
+
+  <div class="actions border p-2 text-white text-lg hover:bg-white hover:text-gray-600 mt-4 text-center">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %>
+</div>
