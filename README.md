@@ -20,7 +20,7 @@ This is a MVP app to keep track of your expenses, it was build with love using R
 ### Category screen
 ![Home](./srceenshots/3.png)
 
-[Live Demo Link](https://dry-dusk-84510.herokuapp.com)
+[Live Demo Link](https://vast-garden-64388.herokuapp.com)
 
 [Video tour](https://www.loom.com/share/5d1681de54674d7182bfda887d7b04ce)
 
