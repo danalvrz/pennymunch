@@ -6,7 +6,7 @@
   </div>
 
   <div class="flex border-b justify-between w-full p-2">
-  <p class="my-3 text-white font-bold text-4xl">
+  <p class="my-3 text-white font-bold text-2xl">
     <%= link_to "#{category.name}", category_costs_path(category) %>
   </p>
 
@@ -18,7 +18,7 @@
   <div class="flex w-full justify-end mb-2 pr-5">
   <% if action_name != "show" %>
     <%#<%= link_to "Show this category", category, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit', edit_category_path(category), class: "border px-2 pt-2 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg" %>
+    <%= link_to 'Edit', edit_category_path(category), class: "border px-4 pt-2 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg" %>
     <%#<%= link_to 'Show category', category_costs_path(category), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-6">
       <%= button_to 'Delete', category_path(category), method: :delete, class: "border p-2 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg" %>

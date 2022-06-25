@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pennymunch</title>
+    <title>Penni</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,8 +10,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body> 
-    <main class="container mx-auto px-4 flex h-screen blurry-bg bg-gray-300 w-full bg-repeat-y">
+  <body class="lg:max-w-[25%] md:max-w-[50%] lg:mx-auto md:mx-auto bg-slate-700 h-screen"> 
+    <main class="container mx-auto px-4 flex h-full blurry-bg bg-gray-300 lg:bg-slate-600 bg-cover w-full bg-repeat-y">
       <%= yield %>
     </main>
   </body>

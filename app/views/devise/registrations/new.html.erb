@@ -10,16 +10,16 @@
 <div class="mt-4 py-10 px-2">
   <div class="text-white"><%= render "devise/shared/error_messages", resource: resource %></div>
   <div class="field">
-    <%= f.text_field :name, placeholder: "full name", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
+    <%= f.text_field :name, placeholder: "name", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
   </div>
 
   <div class="field">
-    <%= f.email_field :email, placeholder: "email", autofocus: true, autocomplete: "email", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
+    <%= f.email_field :email, placeholder: "email (it can be made up)", autofocus: true, autocomplete: "email", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
   </div>
 
   <div class="field">
     <% if @minimum_password_length %>
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "password (#{@minimum_password_length} characters minimum)", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "password (#{@minimum_password_length} characters min)", class: "bg-black/[.20] text-white rounded-lg w-full py-3 my-2 text-2xl" %>
     <% end %><br />
   </div>
 

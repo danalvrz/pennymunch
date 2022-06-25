@@ -7,7 +7,7 @@ ruby '3.0.1'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
+gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -16,19 +16,19 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem 'importmap-rails'
+gem 'importmap-rails', '~> 1.1', '>= 1.1.2'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails'
+gem 'stimulus-rails', '~> 1.0', '>= 1.0.4'
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem 'tailwindcss-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem 'jbuilder'
+gem 'jbuilder', '~> 2.11', '>= 2.11.5'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -37,7 +37,7 @@ gem 'jbuilder'
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem 'bcrypt', '~> 3.1', '>= 3.1.18'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -60,7 +60,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'web-console'
+  gem 'web-console', '~> 4.2'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -73,8 +73,11 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara', '>= 2.7.1'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 5.0'
 end
 
 gem 'devise'
 gem 'rubocop'
+gem 'xpath', '~> 3.2'
+gem 'bindex', '~> 0.8.1'
+gem 'foreman', '~> 0.87.2'

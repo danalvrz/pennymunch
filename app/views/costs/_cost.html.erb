@@ -9,7 +9,7 @@
   </div>
    
   <div class="flex-col p-3 mt-2">
-      <%= button_to "Delete", category_cost_path(category_id: @category.id, id: cost.id), method: :delete, class: "border p-3 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg mb-5" %>
-      <%= link_to 'Edit', update_cost_path(category_id: @category.id, id: cost.id), class: "border p-3 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg" %>
+      <%= button_to "Delete", category_cost_path(category_id: @category.id, id: cost.id), method: :delete, class: "border p-2 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg mb-5" %>
+      <%= link_to 'Edit', update_cost_path(category_id: @category.id, id: cost.id), class: "border p-2 px-5 text-white text-lg hover:bg-white hover:text-gray-600 rounded-lg" %>
     </div>
 </div>
